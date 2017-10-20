@@ -7,8 +7,8 @@ xmax = 0.5
 ymin = -1.1
 ymax = 1.1
 
-width = 1000
-height = 1000
+width = 100
+height = 100
 
 img = Image.new('RGB', (width,height), "black")
 pixels = img.load()
