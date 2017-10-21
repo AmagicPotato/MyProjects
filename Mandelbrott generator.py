@@ -7,8 +7,10 @@ xmax = 0.5
 ymin = -1.1
 ymax = 1.1
 
-width = 100
-height = 100
+width = 500
+height = 500
+
+minimumcontrast = 0.10
 
 img = Image.new('RGB', (width,height), "black")
 pixels = img.load()
@@ -32,7 +34,7 @@ def check(a,b):
         imagine = b_hold
 
         if( math.sqrt(real**2 + imagine**2) > 2 ):
-            divergent = 1
+            divergent = minimumcontrast + (1 - minimumcontrast)/(n+1)
             break
 
         n += 1
@@ -44,7 +46,7 @@ for i in range(img.size[0]):    # for every col:
         re = xmin + (((xmax - xmin) / width) * i) 
         im = ymin + (((ymax - ymin) / width) * j) 
         mandel = check(re,im)
-        pixels[i,j] = (256 * mandel, 256 *mandel, 256*mandel) # set the colour accordingly
+        pixels[i,j] = (int(256 * mandel), int(256 * mandel), int(256 * mandel)) # set the colour accordingly
 
         
 
