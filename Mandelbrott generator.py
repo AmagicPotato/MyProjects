@@ -7,10 +7,10 @@ xmax = 0.5
 ymin = -1.1
 ymax = 1.1
 
-width = 500
-height = 500
+width = 5000
+height = 5000
 
-minimumcontrast = 0.10
+minimumcontrast = 0.20
 
 img = Image.new('RGB', (width,height), "black")
 pixels = img.load()
@@ -41,7 +41,15 @@ def check(a,b):
 
     return divergent
 
+lastpercent = 0
+
 for i in range(img.size[0]):    # for every col:
+    percentage = int(i/img.size[0] * 100)
+    
+    if percentage != lastpercent:
+        print(str(percentage) + "%")
+
+    lastpercent = percentage
     for j in range(img.size[1]):    # For every row
         re = xmin + (((xmax - xmin) / width) * i) 
         im = ymin + (((ymax - ymin) / width) * j) 
