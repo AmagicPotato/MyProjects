@@ -56,6 +56,4 @@ for i in range(img.size[0]):    # for every col:
         mandel = check(re,im)
         pixels[i,j] = (int(256 * mandel), int(256 * mandel), int(256 * mandel)) # set the colour accordingly
 
-        
-
 img.show()
