@@ -7,8 +7,8 @@ xmax = 0.5
 ymin = -1.1
 ymax = 1.1
 
-width = 5000
-height = 5000
+width = 500
+height = 500
 
 minimumcontrast = 0.20
 
